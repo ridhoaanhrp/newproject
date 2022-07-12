@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('judul');
             $table->string('kode_dosen1');
+            $table->string('kode_dosen2');
             // $table->foreign('kode_dosen1')
             //     ->references('kode_dosen')->on('dosens')->onDelete('cascade');
             

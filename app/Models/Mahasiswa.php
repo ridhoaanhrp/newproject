@@ -16,6 +16,7 @@ class Mahasiswa extends Model
         'nim',
         'judul',
         'kode_dosen1',
+        'kode_dosen2',
         'password',
     ];
 

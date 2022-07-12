@@ -35,6 +35,7 @@ class MahasiswaController extends Controller
             'nama' => 'required',
             'nim' => 'required|unique:mahasiswas',
             'kode_dosen1' => 'required',
+            'kode_dosen2' => 'required',
             'judul' => 'required',
             'password' => 'required',
         ]);
@@ -42,6 +43,7 @@ class MahasiswaController extends Controller
             'nama' => $fields['nama'],
             'nim' => $fields['nim'],
             'kode_dosen1' => $fields['kode_dosen1'],
+            'kode_dosen2' => $fields['kode_dosen2'],
             'judul' => $fields['judul'],
             'password' => bcrypt($fields['password']),
         ]);
