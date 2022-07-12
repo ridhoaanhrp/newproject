@@ -15,8 +15,7 @@ class DosenController extends Controller
      */
     public function index()
     {
-        $data = Dosen::all();
-        return $data;
+        return Dosen::all();
     }
 
     /**
