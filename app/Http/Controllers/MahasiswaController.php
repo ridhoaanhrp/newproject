@@ -35,7 +35,7 @@ class MahasiswaController extends Controller
             'nama' => 'required',
             'nim' => 'required|unique:mahasiswas',
             'kode_dosen1' => 'required',
-            'kode_dosen2' => 'required',
+            'kode_dosen2' => 'nullable',
             'judul' => 'required',
             'password' => 'required',
         ]);

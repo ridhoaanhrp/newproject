@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('bimbingans', function (Blueprint $table) {
             $table->id();
+            $table->string('nim')->unsigned();
+            $table->string('kode_dosen')->unsigned();
+            $table->integer('id_progress')->unsigned();
             $table->string('tanggal_bimbingan');
             $table->string('to_do_list');
             $table->string('catatan');
-            // $table->foreign('nim')
-            //     ->references('nim')->on('mahasiswas')->onDelete('cascade');
-            // $table->foreign('kode_dosen')
-            //     ->references('kode_dosen')->on('dosens')->onDelete('cascade');
-            // $table->foreign('id_progress')
-            //     ->references('id')->on('progress')->onDelete('cascade');
+            $table->foreign('nim')->references('nim')->on('mahasiswas')->onDelete('cascade');
+            $table->foreign('kode_dosen')->references('kode_dosen1')->on('dosens')->onDelete('cascade');
+            $table->foreign('id_progress')->references('id')->on('progress')->onDelete('cascade');
             $table->timestamps();
         });
     }
