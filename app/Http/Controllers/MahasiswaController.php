@@ -39,7 +39,7 @@ class MahasiswaController extends Controller
             'judul' => 'required',
             'password' => 'required',
         ]);
-        $dosens = Mahasiswa::create([
+        $mahasiswas = Mahasiswa::create([
             'nama' => $fields['nama'],
             'nim' => $fields['nim'],
             'kode_dosen1' => $fields['kode_dosen1'],
