@@ -51,7 +51,7 @@ class MahasiswaController extends Controller
         $response = [
             'code' => 201,
             'message' => 'Akun berhasil dibuat',
-            'data' => $dosens
+            'data' => $mahasiswas
         ];
 
         return response($response,200);
