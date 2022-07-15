@@ -23,6 +23,6 @@ Route::post('/login-mahasiswa', [MahasiswaController::class, 'loginMahasiswa']);
 Route::post('/regis-mahasiswa', [MahasiswaController::class, 'registerMahasiswa']);
 Route::post('/login-dosen', [DosenController::class, 'loginDosen']);
 Route::post('/regis-dosen', [DosenController::class, 'registerDosen']);
-Route::get('/kode-dosen', [Req::class, 'showCode']);
+Route::get('/kode-dosen', [DosenController::class, 'showCode']);
 Route::get('/m', [MahasiswaController::class, 'index']);
 Route::get('/d', [DosenController::class, 'index']);

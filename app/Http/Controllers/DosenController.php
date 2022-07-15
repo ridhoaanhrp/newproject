@@ -18,7 +18,9 @@ class DosenController extends Controller
         return Dosen::all();
     }
 
-    
+    public function showCode(){
+        return Dosen::all('kode_dosen');
+    }
 
     /**
      * Show the form for creating a new resource.
