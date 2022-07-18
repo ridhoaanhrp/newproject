@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\ProgressController;
 
 /*
 |--------------------------------------------------------------------------
