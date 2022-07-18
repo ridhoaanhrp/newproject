@@ -21,4 +21,11 @@ class Dosen extends Model
     protected $hidden = [
         'password',
     ];
+
+    public function mahasiswa(){
+        return $this->HasMany(Mahasiswa::class);
+    }
+    public function bimbingan(){
+        return $this->hasMany(Bimbingan::class);
+    }
 }

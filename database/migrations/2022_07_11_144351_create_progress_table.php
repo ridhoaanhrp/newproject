@@ -20,8 +20,6 @@ return new class extends Migration
             $table->integer('bab_2');
             $table->integer('bab_3');
             $table->integer('daftar_pustaka');
-            $table->string('nim')->unsigned();
-            $table->foreign('nim')->references('nim')->on('mahasiswas')->onDelete('cascade');
             $table->timestamps();
         });
     }

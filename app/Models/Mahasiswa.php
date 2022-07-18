@@ -24,4 +24,11 @@ class Mahasiswa extends Model
         'password',
     ];
 
+    public function dosen(){
+        return $this->belongsToMany(Dosen::class);
+    }
+    public function bimbingan(){
+        return $this->hasMany(Bimbingan::class);
+    }
+
 }

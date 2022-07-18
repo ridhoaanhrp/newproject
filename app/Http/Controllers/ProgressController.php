@@ -27,6 +27,31 @@ class ProgressController extends Controller
         //
     }
 
+
+    public function formProgress(){
+        $fields = $request->validate([
+            'abstrak' => 'required|numeric|digits_between:0,100',
+            'bab_1' => 'required|numeric|digits_between:0,100',
+            'bab_2' => 'required|numeric|digits_between:0,100',
+            'bab_3' => 'required|numeric|digits_between:0,100',
+            'daftar_pustaka' => 'required|numeric|digits_between:0,100',
+        ]);
+        $progresss = Progress::create([
+            'abstrak' => $fields['abstrak'],
+            'bab_1' => $fields['bab_1'],
+            'bab_2' => $fields['bab_2'],
+            'bab_3' => $fields['bab_3'],
+            'daftar_pustaka' => $fields['daftar_pustaka'],
+        ]);
+        $response = [
+            'code' => 201,
+            'message' => 'Progress berhasil dibuat',
+            'data' => $progresss
+        ];
+
+        return response($response,200);
+
+    }
     /**
      * Store a newly created resource in storage.
      *
