@@ -28,7 +28,7 @@ class ProgressController extends Controller
     }
 
 
-    public function formProgress(){
+    public function formProgress(Request $request){
         $fields = $request->validate([
             'abstrak' => 'required|numeric|digits_between:0,100',
             'bab_1' => 'required|numeric|digits_between:0,100',
