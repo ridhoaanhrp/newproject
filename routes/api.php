@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\BimbinganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::post('/regis-mahasiswa', [MahasiswaController::class, 'registerMahasiswa'
 Route::post('/login-dosen', [DosenController::class, 'loginDosen']);
 Route::post('/regis-dosen', [DosenController::class, 'registerDosen']);
 Route::post('/form-progress', [ProgressController::class, 'formProgress']);
+Route::post('/form-bimbingan', [BimbinganController::class, 'formBimbingan']);
 Route::get('/kode-dosen', [DosenController::class, 'showCode']);
+Route::get('/bimbingan', [BimbinganController::class, 'index']);
 Route::get('/m', [MahasiswaController::class, 'index']);
 Route::get('/d', [DosenController::class, 'index']);

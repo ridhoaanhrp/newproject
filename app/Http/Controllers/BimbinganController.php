@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bimbingan;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class BimbinganController extends Controller
 {
@@ -14,9 +17,29 @@ class BimbinganController extends Controller
      */
     public function index()
     {
-        //
+        $bimbing = DB::table('bimbingans')->leftjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')->leftjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')->leftjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')->get();
+        return $this->sendResponse($bimbing);
     }
+    public function formBimbingan(Request $request){
+        $fields = $request->validate([
+            'tanggal_bimbingan' => 'required',
+            'to_do_list' => 'required',
+            'catatan' => 'nullable',
+        ]);
+        $bimbing = Bimbingans::create([
+            'tanggal_bimbingan' => $fields['tanggal_bimbingan'],
+            'to_do_list' => $fields['to_do_list'],
+            'catatan' => $fields['catatan'],
+        ]);
 
+        $response = [
+            'code' => 201,
+            'message' => 'Bimbingan detail berhasil dibuat',
+            'data' => $bimbing
+        ];
+
+        return response($response,200);
+    }
     /**
      * Show the form for creating a new resource.
      *
