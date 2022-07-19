@@ -15,15 +15,15 @@ class BimbinganController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $bimbing = DB::table('bimbingans')
-            ->leftjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')
-            ->leftjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')
-            ->leftjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')
-            ->get();
-        return $this->sendResponse($bimbing);
-    }
+    // public function index()
+    // {
+    //     $bimbing = DB::table('bimbingans')
+    //         ->leftjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')
+    //         ->leftjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')
+    //         ->leftjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')
+    //         ->get();
+    //     return $this->sendResponse($bimbing);
+    // }
     public function formBimbingan(Request $request){
         $fields = $request->validate([
             'tanggal_bimbingan' => 'required',
@@ -73,7 +73,7 @@ class BimbinganController extends Controller
      */
     public function show(Bimbingan $bimbingan)
     {
-        //
+        return Bimbingan::all();
     }
 
     /**
