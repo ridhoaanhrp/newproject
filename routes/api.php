@@ -29,5 +29,6 @@ Route::post('/form-progress', [ProgressController::class, 'formProgress']);
 Route::post('/form-bimbingan', [BimbinganController::class, 'formBimbingan']);
 Route::get('/kode-dosen', [DosenController::class, 'showCode']);
 Route::get('/bimbingan', [BimbinganController::class, 'show']);
+Route::get('/tes', [BimbinganController::class, 'index']);
 Route::get('/m', [MahasiswaController::class, 'index']);
 Route::get('/d', [DosenController::class, 'index']);
