@@ -17,7 +17,11 @@ class BimbinganController extends Controller
      */
     public function index()
     {
-        $bimbing = DB::table('bimbingans')->leftjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')->leftjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')->leftjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')->get();
+        $bimbing = DB::table('bimbingans')
+            ->leftjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')
+            ->leftjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')
+            ->leftjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')
+            ->get();
         return $this->sendResponse($bimbing);
     }
     public function formBimbingan(Request $request){
