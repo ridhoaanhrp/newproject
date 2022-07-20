@@ -17,12 +17,7 @@ class BimbinganController extends Controller
      */
     public function index()
     {
-        $bimbing = DB::table('bimbingans')
-            ->join('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')
-            ->join('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')
-            ->join('progress', 'bimbingan.id_progress', '=', 'progress.id')
-            ->select('mahasiswas.nim as bimbingans.nim', 'dosens.kode_dosen1 as bimbingans.kode_dosen', 'progress.id as bimbingans.id_progress')
-            ->get();
+        $bimbing = DB::table('bimbingans')->crossjoin('mahasiswas', 'bimbingans.nim', '=', 'mahasiswas.nim')->crossjoin('dosens','bimbingan.kode_dosen','=', 'dosens.kode_dosen1')->crossjoin('progress', 'bimbingan.id_progress', '=', 'progress.id')->get();
         return $this->sendResponse($bimbing);
     }
     public function formBimbingan(Request $request){
