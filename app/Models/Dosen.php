@@ -23,7 +23,7 @@ class Dosen extends Model
     ];
 
     public function mahasiswa(){
-        return $this->HasMany(Mahasiswa::class);
+        return $this->HasMany('App\Models\Mahasiswa','nim');
     }
     public function bimbingan(){
         return $this->hasMany(Bimbingan::class);
