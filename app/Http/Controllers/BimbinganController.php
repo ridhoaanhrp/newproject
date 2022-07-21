@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bimbingan;
+use App\Models\Mahasiswa;
+use App\Models\Dosen;
+use App\Models\Progress;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
