@@ -26,6 +26,6 @@ class Dosen extends Model
         return $this->HasMany('App\Models\Mahasiswa','nim');
     }
     public function bimbingan(){
-        return $this->hasMany(Bimbingan::class);
+        return $this->hasMany('App\Models\Bimbingan','id');
     }
 }
