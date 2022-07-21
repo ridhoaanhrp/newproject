@@ -25,10 +25,10 @@ class Mahasiswa extends Model
     ];
 
     public function dosen(){
-        return $this->belongsToMany('App\Models\Dosen','kode_dosen');
+        return $this->belongsToMany(Dosen::class, 'mahasiswas');
     }
     public function bimbingan(){
-        return $this->hasMany('App\Models\Bimbingan','id');
+        return $this->hasMany(Bimbingans::class,'bimbingans');
     }
 
 }

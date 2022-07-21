@@ -20,7 +20,7 @@ class Progress extends Model
     ];
     
     public function bimbingan(){
-        return $this->belongsTo('App\Models\Bimbingan','id');
+        return $this->belongsTo(Bimbingans::class,'bimbingans');
     }
     
 }

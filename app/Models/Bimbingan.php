@@ -18,14 +18,14 @@ class Bimbingan extends Model
     ]; 
 
     public function dosen(){
-        return $this->belongsTo('App\Models\Dosen','kode_dosen');
+        return $this->belongsTo(Dosen::class,'bimbingans');
     }
 
     public function mahasiswa(){
-        return $this->belongsTo('App\Models\Mahasiswa','nim');
+        return $this->belongsTo(Mahasiswa::class,'bimbingans');
     }
 
     public function progress(){
-        return $this->hasMany('App\Models\Ptogress','id');
+        return $this->hasMany(Progress::class,'bimbingans');
     }
 }
